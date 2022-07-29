@@ -13,7 +13,7 @@ export class AppComponent {
    numberTwo: number = 2;
    togglePokemon: boolean = true;
    favoriteAnimal: string = "turtle";
-   pokemonName: string = "";
+   pokemonName2: string = "";
 
   constructor() {
     this.title = "Oliver";
@@ -21,5 +21,9 @@ export class AppComponent {
 
   handleClick(value: any) {
     console.log(value);
+  }
+
+  handleChange(event : any) {
+      this.pokemonName2 =  event.target.value;
   }
 }

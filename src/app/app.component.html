@@ -9,3 +9,24 @@
     <input type="text" #pokemonName />
     <button (click)="handleClick(pokemonName)">Click Template Ref Value</button>
 </div>
+<div>
+    
+    <input type="text" [value]="pokemonName2" (input)="handleChange($event)" />
+    <p>{{ pokemonName2 }}</p>
+</div>
+<!-- <div *ngIf="!pokemonName2">
+    No search results found...
+</div> -->
+
+<ng-container *ngIf="pokemonName2.length; then pokemon2List; else noPokemon2">
+</ng-container>
+
+
+<ng-template #pokemon2List>
+    <h1>All pokemon2 available</h1>
+    ...
+</ng-template>
+
+<ng-template #noPokemon2>
+    <h1>No pokemon2 available.</h1>
+</ng-template>
