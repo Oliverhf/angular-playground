@@ -1,3 +1,4 @@
+<app-pokemon-list></app-pokemon-list>
 <router-outlet></router-outlet>
 <h1 [innerHtml]="title"></h1>
 <img [src]="imgSrc" />
@@ -30,3 +31,35 @@
 <ng-template #noPokemon2>
     <h1>No pokemon2 available.</h1>
 </ng-template>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Index</th>
+        <th>Type</th>
+    </thead>
+    <tbody>
+      <tr
+      *ngFor="let pokemon of pokemons" >
+        <td [class.active-bool]="pokemon.isActive">{{pokemon.id}}</td>
+        <td>{{pokemon.name}}</td>
+        <td>{{pokemon.type}}</td>
+     </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Index</th>
+        <th>Type</th>
+    </thead>
+    <tbody>
+      <tr
+      *ngFor="let pokemon of pokemons" >
+        <td [ngClass]="{'active-bool' : pokemon.isActive == false}">{{pokemon.id}}</td>
+        <td>{{pokemon.name}}</td>
+        <td>{{pokemon.type}}</td>
+     </tr>
+    </tbody>
+</table>
