@@ -7,8 +7,6 @@ import {Pokemon} from 'src/app/models/pokemon';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-
-
   pokemons: Pokemon[] = [{
     id: 1,
     name: 'pikachu',
@@ -37,6 +35,11 @@ export class PokemonListComponent implements OnInit {
   }
 
 
+  handleRemove(event: Pokemon) {
+    this.pokemons = this.pokemons.filter((pokemon: Pokemon) => {
+      return pokemon.id !== event.id;
+    })
+  }
 
   ngOnInit(): void {
     console.log("OnINitFired")
