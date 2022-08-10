@@ -10,7 +10,13 @@ const POKEMON_API = 'http://localhost:3000/pokemon'
 })
 export class PokemonService {
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) { 
+  console.log(this.http);
+}
+
+getPokemon(id: number) {
+  return this.http.get<Pokemon>(`${POKEMON_API}/1`)
+}
 
 getPokemons() : Observable<Pokemon[]> {
   return this.http.get<Pokemon[]>(POKEMON_API);
