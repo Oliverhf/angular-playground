@@ -3,5 +3,7 @@ export interface Pokemon {
     name: string,
     type: string,
     isActive: boolean,
-    isStylish: boolean
+    isStylish: boolean,
+    isCool: boolean,
+    acceptTerms: boolean
 }

@@ -9,6 +9,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonTemplateFormComponent implements OnInit {
   pokemon!: Pokemon;
+
+  toggleIsCool(object: any) {
+    console.log(object);
+    this.pokemon.isCool = !this.pokemon.isCool;
+  }
+  
   constructor(private pokemonService: PokemonService) { 
 
   }
