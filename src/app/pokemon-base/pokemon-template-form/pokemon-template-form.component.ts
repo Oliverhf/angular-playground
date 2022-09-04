@@ -24,6 +24,10 @@ export class PokemonTemplateFormComponent implements OnInit {
     console.log(object);
     this.pokemon.isCool = !this.pokemon.isCool;
   }
+
+  handleSubmit(object: any) {
+    console.log(object);
+  }
   
   constructor(private pokemonService: PokemonService) { 
 
