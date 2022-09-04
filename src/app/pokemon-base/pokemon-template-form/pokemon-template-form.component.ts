@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon';
+import { Pokemon, PokemonType } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -9,7 +9,17 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonTemplateFormComponent implements OnInit {
   pokemon!: Pokemon;
-
+  pokemonType: PokemonType[] = [ 
+    {
+      key: 0,
+      value: 'Fire'
+    },
+    {
+      key: 1,
+      value: 'Water'
+    }
+  ]
+  
   toggleIsCool(object: any) {
     console.log(object);
     this.pokemon.isCool = !this.pokemon.isCool;

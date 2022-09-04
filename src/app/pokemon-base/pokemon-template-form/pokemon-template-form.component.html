@@ -26,6 +26,12 @@
     />
    Please acheck to accept Accept Terms.
   </label>
+  <label>
+    Pokemon Type:
+    <select name="pokemonType" [ngModel]="pokemon?.name">
+      <option *ngFor="let type of pokemonType" [value]="type.value" [selected]="type.value === pokemon.type">{{type.value}}</option>
+    </select>
+  </label>
 </form>
 MODEL: {{ pokemon | json }}
 FORM: {{ form.value | json}}
