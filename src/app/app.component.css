@@ -5,3 +5,7 @@
 .unactive-bool {
     background: #de3333;
 }
+
+.active {
+    background: red;
+}

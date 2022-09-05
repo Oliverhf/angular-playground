@@ -1,6 +1,9 @@
+
+<ng-content select="h1"></ng-content>
 <tr>
   <td [class.active-bool]="detail.isActive">
     {{detail.id}}:{{detail.name}} {{detail.isActive == true ? "Is Active" : "Is not Active"}}
   </td>
+  <button [routerLink]="['/pokemon', detail.id]">Details</button>
   <button (click)="onRemove()">Remove Pokemon</button>
 </tr>
